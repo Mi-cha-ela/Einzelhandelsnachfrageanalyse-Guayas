@@ -33,7 +33,8 @@ Diese Woche wurde auf Basis der in Woche 1 vorbereiteten Guayas-Daten (Top-3-Pro
 
 Das Feature Engineering umfasst Kalendermerkmale (Wochentag, Monat, Wochenende) sowie zeitliche Merkmale wie Lag-Features und Rolling Means. Das XGBoost-Modell stellte eine funktionierende Baseline dar, zeigte jedoch Grenzen aufgrund intermittierender Verkäufe (viele Nullen und seltene Peaks) sowie der starken Reduzierung des Datenausschnitts. In der Feature-Importance dominierten kurzfristige Signale (z. B. lag_1) und statische Artikel- bzw. Filialmerkmale, während Promotions und rollierende Mittelwerte in diesem Setup nur begrenzte Zusatznutzen lieferten.
 
-## Fazit: Die Pipeline ist korrekt und reproduzierbar. Für realistischere Nachfrageprognosen auf Item-Ebene wären jedoch dichtere Zeitreihen (z. B. Auffüllen fehlender Tage) oder alternative Modellierungsebenen und -ansätze besser geeignet.
+## Fazit: 
+Die Pipeline ist korrekt und reproduzierbar. Für realistischere Nachfrageprognosen auf Item-Ebene wären jedoch dichtere Zeitreihen (z. B. Auffüllen fehlender Tage) oder alternative Modellierungsebenen und -ansätze besser geeignet.
 
 Zur zusätzlichen Analyse der zeitlichen Abhängigkeiten wurde ein Autokorrelationsdiagramm (ACF) der aggregierten Tagesumsätze für Guayas (Q1 2014) erstellt. Das Diagramm zeigte eine deutliche kurzfristige Autokorrelation (Lag 1) sowie Hinweise auf eine wöchentliche Struktur (Lag 7), was die Verwendung von Lag-Features grundsätzlich rechtfertigt. Gleichzeitig nahm die Autokorrelation schnell ab, was auf eine hohe Variabilität und unregelmäßige Nachfrage auf Item-Ebene hinwies. Dies erklärt, warum einfache Lag-Features im Modell vorherrschen, während komplexere rollierende Features nur begrenzte Zusatznutzenlieferten.
 
@@ -57,9 +58,9 @@ Eine praktische Implementierung wurde im Rahmen dieses Projekts nicht durchgefü
 
 Im Vergleich dazu eignet sich XGBoost besser als robuste Baseline für sparse tabellarische Zeitreihendaten mit vielen erklärenden Variablen.
 
-# #„Alternativ wäre eine Implementierung mit PyTorch möglich gewesen, da dieses Framework neue Python-Versionen schneller unterstützt. Dies liegt jedoch außerhalb des Umfangs dieser Aufgabe.“
+„Alternativ wäre eine Implementierung mit PyTorch möglich gewesen, da dieses Framework neue Python-Versionen schneller unterstützt. Dies liegt jedoch außerhalb des Umfangs dieser Aufgabe.“
 
-## In Colab Mini Modell erstellt:
+In Colab Mini Modell erstellt:
 
 ## 📌 Ergebniszusammenfassung LSTM
 Für die Region Guayas wurde zusätzlich ein LSTM-Modell auf aggregierter Ebene trainiert. Die täglichen Käufe wurden pro Produktfamilie zusammengefasst und für das erste Quartal 2014 modelliert. Für die Familie GROCERY I gab sich ein MAE von 340 und ein RMSE von 360. Die vergleichsweise hohen Fehlerwerte sind auf die Aggregation über alle Stores und Artikel zurückzuführen und liegen im realistischen Bereich der täglichen Gesamtverkäufe.
@@ -111,8 +112,8 @@ MLflow verbessert die Reproduzierbarkeit stark
 
 Streamlit eignet sich ideal für schnelle Deployment-Demos
 
-🧠 Technische Besonderheiten
-Warum XGBoost?
+## 🧠 Technische Besonderheiten
+## Warum XGBoost?
 Beste Performance auf tabellarischen Daten
 
 Warum LSTM nur Colab?
@@ -127,7 +128,7 @@ Warum Aggregation sinnvoll?
 
 Stabilere Signale
 
-🎤 Kurzfazit
+## 🎤 Kurzfazit
 Es wurde eine reproduzierbare Demand-Forecasting-Pipeline mit XGBoost als robustem Baseline-Modell aufgebaut. Ein zusätzlicher LSTM-Vergleich wurde aufgrund von TensorFlow-Kompatibilität in Colab trainiert, jedoch auf sparse Retail-Daten geringerer Genauigkeit. Die Ergebnisse wurden über MLflow versioniert und in einer Streamlit-App interaktiv bereitgestellt.
 
 
