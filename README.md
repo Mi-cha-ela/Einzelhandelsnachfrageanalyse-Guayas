@@ -1,5 +1,3 @@
-# Einzelhandelsnachfrageanalyse-Guayas
-In diesem Projekt wird die tägliche Nachfrage (unit_sales) für Einzelhandelsprodukte in der Region Guayas auf Basis des Kaggle-Datensatzes „Corporación Favorita“ prognostiziert. Der Fokus liegt auf Datenaufbereitung, Feature Engineering sowie dem Vergleich eines XGBoost-Baselinemodells mit einem LSTM-Ansatz.
 
 ## Datenhinweis
 
@@ -9,11 +7,11 @@ https://www.kaggle.com/competitions/favorita-grocery-sales-forecasting
 
 Speichere die CSV-Dateien anschließend im Ordner /data, damit die Skripte korrekt ausgeführt werden können.
 
-Einzelhandelsnachfrageanalyse
+## Einzelhandelsnachfrageanalyse
 In diesem Projekt wird die tägliche Nachfrage (unit_sales) für Einzelhandelsprodukte in der Region Guayas auf Basis des Kaggle-Datensatzes „Corporación Favorite“ prognostiziert. Der Fokus liegt auf Datenaufbereitung, Feature Engineering sowie dem Vergleich eines XGBoost-Baselinemodells mit einem LSTM-Ansatz.
 
-Nachfrageprognose für den Einzelhandel – Guayas (Woche 2)
-Ziel
+## Nachfrageprognose für den Einzelhandel – Guayas (Woche 2)
+## Ziel
 Prognose der täglichen Verkaufsmenge ( unit_sales) für Stores in der Region Guayas auf Basis vorbereiteter Zeitreihendaten (Q1 2014).
 
 ## Daten
