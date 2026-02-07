@@ -65,10 +65,10 @@ In Colab Mini Modell erstellt:
 ## 📌 Ergebniszusammenfassung LSTM
 Für die Region Guayas wurde zusätzlich ein LSTM-Modell auf aggregierter Ebene trainiert. Die täglichen Käufe wurden pro Produktfamilie zusammengefasst und für das erste Quartal 2014 modelliert. Für die Familie GROCERY I gab sich ein MAE von 340 und ein RMSE von 360. Die vergleichsweise hohen Fehlerwerte sind auf die Aggregation über alle Stores und Artikel zurückzuführen und liegen im realistischen Bereich der täglichen Gesamtverkäufe.
 
-🧠 Kurze Einordnung / Vergleich
+## 🧠 Kurze Einordnung / Vergleich
 Im Vergleich zum XGBoost-Modell auf Store-Item-Ebene ist das LSTM-Modell weniger präzise, ​​da es auf einer deutlich größeren Aggregation und mit wenigen Eingangsmerkmalen trainiert wurde. Das Experiment zeigt jedoch, dass LSTM-Modelle grundsätzlich für aggregierte Nachfrageprognosen geeignet sind, bei kurzen Zeitreihen jedoch limitiert bleiben.
 
-Reflexion – Woche 3
+## Reflexion – Woche 3
 In Woche 3 wurde auf Basis der Q1-2014-Daten für Guayas ein XGBoost-Modell trainiert und mit MLflow systematisch evaluiert. Durch einen streng chronologischen Train-/Test-Split konnten realistische Prognosefehler berechnet werden.
 
 Die Ergebnisse zeigen, dass XGBoost gegenüber der Baseline eine Verbesserung erzielt, insbesondere in MAE und RMSE. Gleichzeitig fällt der MAPE aufgrund stark intermittierender Nachfrage auf Item-Ebene sehr hoch aus, was die eingeschränkte Eignung prozentualer Fehlermaße in diesem Kontext verdeutlicht.
