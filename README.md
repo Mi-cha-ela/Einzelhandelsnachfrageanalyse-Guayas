@@ -1,6 +1,5 @@
 ## Project Structure
-
-.
+„„„
 ├── assets/              # Screenshots and media
 ├── data/                # Kaggle data instructions
 ├── models/              # Saved XGBoost models / MLflow artifacts
@@ -11,6 +10,7 @@
 │   └── app.py
 ├── requirements.txt
 └── README.md
+„„„
 ## Datenhinweis
 
 Die Originaldatensätze sind aufgrund ihrer Größe nicht im GitHub-Repository enthalten.
