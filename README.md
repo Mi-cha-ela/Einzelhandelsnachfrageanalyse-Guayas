@@ -1,4 +1,16 @@
+## Project Structure
 
+.
+├── assets/              # Screenshots and media
+├── data/                # Kaggle data instructions
+├── models/              # Saved XGBoost models / MLflow artifacts
+├── notebooks/           # EDA and LSTM experiments
+├── src/
+│   ├── training.py
+│   ├── lstm_colab.py
+│   └── app.py
+├── requirements.txt
+└── README.md
 ## Datenhinweis
 
 Die Originaldatensätze sind aufgrund ihrer Größe nicht im GitHub-Repository enthalten.
@@ -24,8 +36,8 @@ Modell: XGBoost-Regressor
 Features: Kalendermerkmale, Lags, Rolling Mean, Store- & Item-Metadaten
 Zug/Test: Jan–Feb / März (chronologisch)
 Ergebnisse
-MAE: XX.X
-RMSE: XX,X
+MAE: 340,34
+RMSE: 360,02
 Kurzfristige Lags (lag_1) dominieren die Prognose
 Kalender- und Store-Effekte unterstützt
 Reflexion – Woche 2 (Guayas, XGBoost)
